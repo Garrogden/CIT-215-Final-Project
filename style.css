@@ -1,0 +1,164 @@
+#instStore {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+.header {
+  text-align: center;
+  font-size: 60px;
+  font-style: italic;
+  font-weight: bold;
+  color: #fbeec1;
+}
+
+body {
+  font-family: "Castellar";
+  background-color: #05386b;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.instrument {
+  position: relative;
+  height: 330px;
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fbeec1;
+  box-shadow: rgba(0, 0, 0, 0.5) 4px 4px 16px;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+img {
+  margin-top: 13px;
+  height: 180px;
+}
+
+.noImage {
+  margin-top: 13px;
+  height: 160px;
+}
+
+.addButton {
+  margin-top: 10px;
+  margin-left: 15px;
+  background-color: #fbeec1;
+  padding: 15px 15px;
+  font-size: 15px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  font-family: "Castellar";
+}
+
+.addButton:hover {
+  background-color: #7070db;
+  color: white;
+}
+
+.Fender:hover {
+  background-color: #cc0000;
+  color: white;
+}
+
+.Yamaha:hover {
+  background-color: #339966;
+  color: white;
+}
+
+.Maton:hover {
+  background-color: #4d4dff;
+  color: white;
+}
+
+.theCart {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #fbeec1;
+  color: black;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  font-family: "Castellar";
+}
+
+.theCart:hover {
+  background-color: #7070db;
+  color: white;
+}
+
+.newItem {
+  position: fixed;
+  font-size: 18px;
+  top: 10px;
+  right: 1345px;
+  background-color: #fbeec1;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-family: "Castellar";
+}
+
+.newItem:hover {
+  background-color: #7070db;
+  color: white;
+}
+
+.exitButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.exitButton:hover {
+  background-color: #7070db;
+  color: white;
+}
+
+.popUp {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(193, 193, 193, 0.66);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  display: flex;
+  z-index: 998;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail {
+  background-color: #05386b;
+  width: 400px;
+  height: 550px;
+}
+
+.form {
+  position: relative;
+  width: 400px;
+  height: 360px;
+  background-color: #05386b;
+  color: #fbeec1;
+}
+
+.emptyStore {
+  color: #fbeec1;
+}

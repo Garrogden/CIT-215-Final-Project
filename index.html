@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - JS Playground</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h1 class="header">The Instrument Co. </h1>
+
+<div id="instStore">
+  
+  <h1 v-if="emptyStore">Sorry our store is now empty!</h1>
+  <div class="container" v-for="(instrument, index) in instruments">
+    
+    <div class="instrument" v-bind:class="instrument.brand">
+      <img v-if="!instrument.noImg" v-bind:src="instrument.img" alt="no image" v-on:click="instrumentInfo(instrument)">
+      <h1 v-if="instrument.noImg" class="noImage" v-on:click="instrumentInfo(instrument)">No Image Available</h1>
+      <h1 v-on:click="instrumentInfo(instrument)">{{instrument.name}}</h1>
+
+      <button class="addButton" v-on:click="addCart(instrument,index)">Add To Your Cart</button>
+    </div>
+
+    <div v-if="showForm" class="popUp">
+      <div class="form">
+        <button class="exitButton" v-on:click="exitForm">X</button>
+        <h2> New Item Form</h2>
+        <input type="text" v-model="itemName" placeholder="Enter Instrument Name"><br>
+
+        <input type="text" v-model="itemType" placeholder="Enter Instrument Type"><br>
+
+        <input type="text" v-model="itemPrice" placeholder="Enter Instrument Price"><br>
+
+        <h4>Brand:</h4>
+        <input type="radio" id="one" value="Fender" v-model="itemBrand">
+        <label for="one">Fender</label><br>
+
+        <input type="radio" id="two" value="Yamaha" v-model="itemBrand">
+        <label for="one">Yamaha</label><br>
+
+        <input type="radio" id="three" value="Maton" v-model="itemBrand">
+        <label for="one">Maton</label><br>
+
+        <button class="addButton" v-on:click="addInstrument">Submit New Item!</button>
+      </div>
+    </div>
+
+    <div v-if="showItem" class="popUp" v-on:click="showItem=false">
+      <div class="instrument detail">
+        <img v-if="!item.noImg" v-bind:src="item.img" alt="no image">
+        <h1 v-if="item.noImg" class="noImage">No Image Can Be Displayed</h1>
+        <h1>Product: {{item.name}}</h1>
+        <h1>Type: {{item.type}}</h1>
+        <h1>Price: ${{item.price}}</h1>
+        <h1>Brand: {{item.brand}}</h1>
+
+        <button class="addButton" type="submit" v-on:click="addCart(instrument,index)">Add To Your Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="newItem" v-on:click="showForm=true">Add New Item</button>
+  <button class="theCart" v-on:click="removeAll">
+    Your Cart: {{theCart.length}}</button>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
